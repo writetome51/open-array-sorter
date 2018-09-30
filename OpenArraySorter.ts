@@ -1,8 +1,9 @@
 import { OpenArrayContainer } from '@writetome51/open-array-container/OpenArrayContainer';
 import { getShuffled } from '@writetome51/get-shuffled/getShuffled';
+import { getInAscendingOrder } from '@writetome51/get-in-ascending-order/getInAscendingOrder';
 import { alphabetizeAscending, alphabetizeDescending }
 	from 'intuitive-string-handlers/alphabetizeAscending_alphabetizeDescending';
-import { getInAscendingOrder } from '@writetome51/get-in-ascending-order/getInAscendingOrder';
+
 
 
 export class OpenArraySorter extends OpenArrayContainer {

@@ -1,7 +1,7 @@
 {
-  "name": "@writetome51/open-array-content",
+  "name": "@writetome51/open-array-sorter",
   "version": "1.0.0",
-  "description": "an array-manipulating typescript/javascript class with properties and methods that give info about what is in the array",
+  "description": "an array-manipulating typescript/javascript class with sorting methods",
   "main": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,17 +10,14 @@
     "array",
     "manipulation",
     "typescript",
-    "classes"
+    "class"
   ],
   "author": "Steve Thompson",
   "license": "MIT",
   "dependencies": {
-    "basic-data-handling": "latest",
+    "intuitive-string-handlers": "latest",
+    "@writetome51/get-shuffled": "latest",
     "@writetome51/open-array-container": "latest",
-    "@writetome51/array-get-indexes-basic": "latest",
-    "@writetome51/array-get-indexes-intermediate": "latest",
-    "@writetome51/array-analysis-basic": "latest",
-    "@writetome51/array-analysis-intermediate": "latest",
-    "@writetome51/arrays-match": "latest"
+    "@writetome51/get-in-ascending-order": "latest"
   }
 }

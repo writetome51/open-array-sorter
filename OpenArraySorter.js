@@ -13,10 +13,10 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var OpenArrayContainer_1 = require("./OpenArrayContainer");
-var getShuffled_1 = require("intuitive-array-handlers/no_modify/get/getShuffled");
+var OpenArrayContainer_1 = require("@writetome51/open-array-container/OpenArrayContainer");
+var getShuffled_1 = require("@writetome51/get-shuffled/getShuffled");
+var getInAscendingOrder_1 = require("@writetome51/get-in-ascending-order/getInAscendingOrder");
 var alphabetizeAscending_alphabetizeDescending_1 = require("intuitive-string-handlers/alphabetizeAscending_alphabetizeDescending");
-var getInAscendingOrder_1 = require("intuitive-number-handlers/get/getInAscendingOrder");
 var OpenArraySorter = /** @class */ (function (_super) {
     __extends(OpenArraySorter, _super);
     function OpenArraySorter(data) {
