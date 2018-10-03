@@ -1,6 +1,6 @@
 {
   "name": "@writetome51/open-array-sorter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "an array-manipulating typescript/javascript class with sorting methods",
   "main": "",
   "scripts": {
@@ -16,8 +16,9 @@
   "license": "MIT",
   "dependencies": {
     "intuitive-string-handlers": "latest",
-    "@writetome51/get-shuffled": "latest",
+    "@writetome51/array-get-shuffled": "latest",
     "@writetome51/open-array-container": "latest",
-    "@writetome51/get-in-ascending-order": "latest"
+    "@writetome51/get-in-ascending-order": "latest",
+    "@writetome51/array-non-modifying-getters-basic": "latest"
   }
 }

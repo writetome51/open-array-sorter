@@ -14,9 +14,10 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var OpenArrayContainer_1 = require("@writetome51/open-array-container/OpenArrayContainer");
-var getShuffled_1 = require("@writetome51/get-shuffled/getShuffled");
+var getShuffled_1 = require("@writetome51/array-get-shuffled/getShuffled");
 var getInAscendingOrder_1 = require("@writetome51/get-in-ascending-order/getInAscendingOrder");
 var alphabetizeAscending_alphabetizeDescending_1 = require("intuitive-string-handlers/alphabetizeAscending_alphabetizeDescending");
+var getCopy_1 = require("@writetome51/array-non-modifying-getters-basic/getCopy");
 var OpenArraySorter = /** @class */ (function (_super) {
     __extends(OpenArraySorter, _super);
     function OpenArraySorter(data) {
@@ -40,7 +41,8 @@ var OpenArraySorter = /** @class */ (function (_super) {
         return this.returnThis_after(this.data.reverse());
     };
     OpenArraySorter.prototype.shuffle = function () {
-        return this.returnThis_after(this.data = getShuffled_1.getShuffled(this.data));
+        var copy = getCopy_1.getCopy(this.data);
+        return this.returnThis_after(this.data = getShuffled_1.getShuffled(copy));
     };
     return OpenArraySorter;
 }(OpenArrayContainer_1.OpenArrayContainer));
