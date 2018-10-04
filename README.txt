@@ -6,9 +6,7 @@ OpenArraySorter has these methods:
 
 .numbersDescending()
 
-.alphabetizeAscending()
-
-.alphabetizeDescending()
+.alphabetize()
 
 .reverse()
 

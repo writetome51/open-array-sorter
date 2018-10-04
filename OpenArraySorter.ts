@@ -1,10 +1,12 @@
 import { OpenArrayContainer } from '@writetome51/open-array-container/OpenArrayContainer';
 import { getShuffled } from '@writetome51/array-get-shuffled/getShuffled';
 import { getInAscendingOrder } from '@writetome51/get-in-ascending-order/getInAscendingOrder';
-import { alphabetizeAscending, alphabetizeDescending }
-	from 'intuitive-string-handlers/alphabetizeAscending_alphabetizeDescending';
-import {getCopy} from '@writetome51/array-non-modifying-getters-basic/getCopy';
+import { alphabetize } from '@writetome51/alphabetize/alphabetize';
+import { append } from '@writetome51/array-append-prepend/append-prepend';
 
+
+// All the methods in this class modify the array without breaking its reference,
+// so it remains in-sync with other references to the same array.
 
 
 export class OpenArraySorter extends OpenArrayContainer {
@@ -15,11 +17,13 @@ export class OpenArraySorter extends OpenArrayContainer {
 	}
 
 
-	// These functions modify the array and return the class instance.
+	// All these functions return the class instance.
 
 
 	numbersAscending(): this {
-		return this.returnThis_after(this.data = getInAscendingOrder(this.data));
+		let orderedNumbers = getInAscendingOrder(this.data);
+		this.data.length = 0;
+		return this.returnThis_after(append(orderedNumbers, this.data));
 	}
 
 
@@ -28,13 +32,8 @@ export class OpenArraySorter extends OpenArrayContainer {
 	}
 
 
-	alphabetizeAscending(): this {
-		return this.returnThis_after(alphabetizeAscending(this.data));
-	}
-
-
-	alphabetizeDescending(): this {
-		return this.returnThis_after(alphabetizeDescending(this.data));
+	alphabetize(): this {
+		return this.returnThis_after(alphabetize(this.data));
 	}
 
 
@@ -44,8 +43,9 @@ export class OpenArraySorter extends OpenArrayContainer {
 
 
 	shuffle(): this {
-		let copy = getCopy(this.data);
-		return this.returnThis_after(this.data = getShuffled(copy));
+		let shuffledData = getShuffled(this.data);
+		this.data.length = 0;
+		return this.returnThis_after(append(shuffledData, this.data));
 	}
 
 

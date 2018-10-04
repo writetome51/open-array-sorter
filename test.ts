@@ -6,13 +6,9 @@ let sorter = new OpenArraySorter([1,2,3,4,5,6,7]);
 sorter.shuffle();
 console.log(sorter.data);
 
-sorter.numbersDescending();
-console.log(sorter.data);
+let copy = sorter.data;
 
-sorter.numbersAscending();
-console.log(sorter.data);
+sorter.alphabetize();
 
-sorter.alphabetizeDescending();
 console.log(sorter.data);
-
-console.log(sorter.reverse().data);
+console.log(copy);
