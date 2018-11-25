@@ -1,10 +1,15 @@
 {
-  "name": "@writetome51/open-array-sorter",
-  "version": "1.0.2",
-  "description": "an array-manipulating typescript/javascript class with sorting methods",
-  "main": "",
+  "name": "@writetome51/public-array-sorter",
+  "version": "1.0.0",
+  "description": "A typescript/javascript class for sorting an array",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/writetome51/public-array-sorter.git"
   },
   "keywords": [
     "array",
@@ -14,12 +19,19 @@
   ],
   "author": "Steve Thompson",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/writetome51/public-array-sorter/issues"
+  },
+  "homepage": "https://github.com/writetome51/public-array-sorter#readme",
+  "devDependencies": {
+    "typescript": "^3.0.1"
+  },
   "dependencies": {
     "@writetome51/alphabetize": "latest",
     "@writetome51/array-get-shuffled": "latest",
-    "@writetome51/open-array-container": "latest",
     "@writetome51/get-in-ascending-order": "latest",
+    "@writetome51/public-array-container": "latest",
     "@writetome51/array-non-modifying-getters-basic": "latest",
-    "@writetome51/array-append-prepend": "latest"
+    "@writetome51/set-array": "~1.0.0"
   }
 }
