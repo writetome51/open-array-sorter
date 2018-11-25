@@ -1,7 +1,7 @@
 # PublicArraySorter
 
 A TypeScript/JavaScript class for sorting array items.  
-All its methods modify the array and return the class instance.
+All its methods change the order of the items and return the class instance.
 
 ## Installation
 
@@ -36,7 +36,15 @@ data : any[] (read-writable) // This is the array to be operated on.
 ### Methods
 
 ```
+alphabetize(): this;
 
+numbersAscending(): this;
+
+numbersDescending(): this;
+
+reverse(): this;
+
+shuffle(): this;
 ```
 
 
