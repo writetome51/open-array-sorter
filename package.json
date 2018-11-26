@@ -25,13 +25,14 @@
   "homepage": "https://github.com/writetome51/public-array-sorter#readme",
   "devDependencies": {
     "typescript": "^3.0.1",
+    "@writetome51/array-has": "~1.0.5",
     "@writetome51/arrays-match": "~1.0.3"
   },
   "dependencies": {
-    "@writetome51/alphabetize": "latest",
-    "@writetome51/array-get-shuffled": "latest",
-    "@writetome51/get-in-ascending-order": "latest",
-    "@writetome51/public-array-container": "latest",
+    "@writetome51/alphabetize": "~1.0.3",
+    "@writetome51/array-get-shuffled": "~1.0.4",
+    "@writetome51/get-in-ascending-order": "~1.0.4",
+    "@writetome51/public-array-container": "~1.0.4",
     "@writetome51/set-array": "~1.0.0"
   }
 }

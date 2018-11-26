@@ -2,14 +2,15 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var index_1 = require("./index");
 var arrays_match_1 = require("@writetome51/arrays-match");
+var array_has_1 = require("@writetome51/array-has");
 var sort = new index_1.PublicArraySorter();
-var otherArr = sort.data;
-// Test 1
+// Test 1 - make sure .alphabetize() works:
 sort.data = ['book', 'copy', 'zaa', 'aac', '_10', 100, 'aaa', 'atco',
     'Zebra', 'bat', '__100', '!', 'aab', '@', 'Ã', '#', '$', '%', '^',
     '&', '*', '000', 'AE', '(', ')', '-', 'Atco', '+', '=', 'aardvark', 2,
     '1000', '30', 0, 'A', 'qqq', '~', 'x', 'Ô', 'Â', '<', '>', ',', '.', 'Í', 'Ǣ',
     'i', '/', '?', 'Zaa', '∏', '|', '\\'];
+var otherArr = sort.data;
 var obj = sort.alphabetize();
 if (arrays_match_1.arraysMatch(sort.data, [
     '__100', '_10', '-', ',', '!', '?', '.', '(', ')', '@', '*', '/', '\\', '&', '#',
@@ -26,144 +27,85 @@ if (obj.className && obj.className === 'PublicArraySorter' &&
     console.log('test 1A passed');
 else
     console.log('test 1A FAILED');
-//Test 2
+//Test 1B: make sure memory reference wasn't broken:
 if (arrays_match_1.arraysMatch(sort.data, otherArr))
+    console.log('test 1B passed');
+else
+    console.log('test 1B FAILED');
+// Test 2: test .numbersAscending:
+sort.data = [5, 0.004, -1, 202, 4, 2, 20, 4, 10, 100, 99.1, 98.9, 99];
+otherArr = sort.data;
+obj = sort.numbersAscending();
+if (arrays_match_1.arraysMatch(sort.data, [-1, 0.004, 2, 4, 4, 5, 10, 20, 98.9, 99, 99.1, 100, 202]))
     console.log('test 2 passed');
 else
     console.log('test 2 FAILED');
-// Test 2A: test .adjacentAt and make sure function returned the class instance:
-obj = sort.adjacentAt(0, [10, 20, 30, 40]);
-if (arrays_match_1.arraysMatch(sort.data, [10, 20, 30, 40, 5, 6, 7, 8, 9, '100']) &&
-    (obj.className && obj.className === 'PublicArraySorter' &&
-        arrays_match_1.arraysMatch(sort.data, obj.data)))
+// Test 2A: make sure function returned the class instance:
+if (obj.className && obj.className === 'PublicArraySorter' &&
+    arrays_match_1.arraysMatch(sort.data, obj.data))
     console.log('test 2A passed');
 else
     console.log('test 2A FAILED');
-//Test 2B
+//Test 2B: make sure memory reference wasn't broken:
 if (arrays_match_1.arraysMatch(sort.data, otherArr))
     console.log('test 2B passed');
 else
     console.log('test 2B FAILED');
-// Test 3: test .adjacentToValue and make sure function returned the class instance:
-sort.data = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+// Test 3: test .numbersDescending():
+sort.data = [5, 0.004, -1, 202, 4, 2, 20, 4, 10, 100, 99.1, 98.9, 99];
 otherArr = sort.data;
-obj = sort.adjacentToValue({ value: 4, howMany: 3, offset: 1 }, [11, 12, 13]);
-if (arrays_match_1.arraysMatch(sort.data, [1, 2, 3, 4, 11, 12, 13, 8, 9]) &&
-    (obj.className && obj.className === 'PublicArraySorter' &&
-        arrays_match_1.arraysMatch(sort.data, obj.data)))
+obj = sort.numbersDescending();
+if (arrays_match_1.arraysMatch(sort.data, [202, 100, 99.1, 99, 98.9, 20, 10, 5, 4, 4, 2, 0.004, -1]))
     console.log('test 3 passed');
 else
     console.log('test 3 FAILED');
-//Test 4: make sure memory reference wasn't broken:
+// Test 3A: make sure function returned the class instance:
+if (obj.className && obj.className === 'PublicArraySorter' &&
+    arrays_match_1.arraysMatch(sort.data, obj.data))
+    console.log('test 3A passed');
+else
+    console.log('test 3A FAILED');
+//Test 3B: make sure memory reference wasn't broken:
 if (arrays_match_1.arraysMatch(sort.data, otherArr))
+    console.log('test 3B passed');
+else
+    console.log('test 3B FAILED');
+// Test 4: test .reverse():
+sort.data = [5, 0.004, -1, 202, 4, 2, 20, 4, 10, 100, 99.1, 98.9, 99];
+otherArr = sort.data;
+obj = sort.reverse();
+if (arrays_match_1.arraysMatch(sort.data, [99, 98.9, 99.1, 100, 10, 4, 20, 2, 4, 202, -1, 0.004, 5]))
     console.log('test 4 passed');
 else
     console.log('test 4 FAILED');
-// Test 5
-obj = sort.between(3, ['hello', 'there']);
-if (arrays_match_1.arraysMatch(sort.data, [1, 2, 3, 'hello', 'there', 13, 8, 9]) &&
-    (obj.className && obj.className === 'PublicArraySorter' &&
-        arrays_match_1.arraysMatch(sort.data, obj.data)))
+// Test 4A: make sure function returned the class instance:
+if (obj.className && obj.className === 'PublicArraySorter' &&
+    arrays_match_1.arraysMatch(sort.data, obj.data))
+    console.log('test 4A passed');
+else
+    console.log('test 4A FAILED');
+//Test 4B: make sure memory reference wasn't broken:
+if (arrays_match_1.arraysMatch(sort.data, otherArr))
+    console.log('test 4B passed');
+else
+    console.log('test 4B FAILED');
+// Test 5: test .shuffle():
+sort.data = [5, 0.004, -1, 202, 4, 2, 20, 4, 10, 100, 99.1, 98.9, 99];
+otherArr = sort.data;
+obj = sort.shuffle();
+if (sort.data.length === 13 &&
+    array_has_1.arrayHasAll([5, 0.004, -1, 202, 4, 2, 20, 4, 10, 100, 99.1, 98.9, 99], sort.data))
     console.log('test 5 passed');
 else
     console.log('test 5 FAILED');
-//Test 6
+// Test 5A: make sure function returned the class instance:
+if (obj.className && obj.className === 'PublicArraySorter' &&
+    arrays_match_1.arraysMatch(sort.data, obj.data))
+    console.log('test 5A passed');
+else
+    console.log('test 5A FAILED');
+//Test 5B: make sure memory reference wasn't broken:
 if (arrays_match_1.arraysMatch(sort.data, otherArr))
-    console.log('test 6 passed');
+    console.log('test 5B passed');
 else
-    console.log('test 6 FAILED');
-// Test 7
-sort.data = [1, 2, 3, 'hello', 'there', 13, 8, 9, 3];
-otherArr = sort.data;
-obj = sort.firstOf(3, [1]);
-if (arrays_match_1.arraysMatch(sort.data, [1, 2, [1], 'hello', 'there', 13, 8, 9, 3]) &&
-    (obj.className && obj.className === 'PublicArraySorter' &&
-        arrays_match_1.arraysMatch(sort.data, obj.data)))
-    console.log('test 7 passed');
-else
-    console.log('test 7 FAILED');
-//Test 8
-if (arrays_match_1.arraysMatch(sort.data, otherArr))
-    console.log('test 8 passed');
-else
-    console.log('test 8 FAILED');
-// Test 9
-sort.data = [1, 2, 1, 3, 'hello', 'there', 2, 13, 8, 9, 3];
-otherArr = sort.data;
-obj = sort.firstOfEach([1, 2, 3], ['h', 'i', 'j']);
-if (arrays_match_1.arraysMatch(sort.data, ['h', 'i', 1, 'j', 'hello', 'there', 2, 13, 8, 9, 3]) &&
-    (obj.className && obj.className === 'PublicArraySorter' &&
-        arrays_match_1.arraysMatch(sort.data, obj.data)))
-    console.log('test 9 passed');
-else
-    console.log('test 9 FAILED');
-//Test 10
-if (arrays_match_1.arraysMatch(sort.data, otherArr))
-    console.log('test 10 passed');
-else
-    console.log('test 10 FAILED');
-// Test 11
-sort.data = [1, 2, 1, 3, 'hello', 'there', 2, 13, 8, 9, 3];
-otherArr = sort.data;
-obj = sort.allOf(2, '');
-if (arrays_match_1.arraysMatch(sort.data, [1, '', 1, 3, 'hello', 'there', '', 13, 8, 9, 3]) &&
-    (obj.className && obj.className === 'PublicArraySorter' &&
-        arrays_match_1.arraysMatch(sort.data, obj.data)))
-    console.log('test 11 passed');
-else
-    console.log('test 11 FAILED');
-//Test 12
-if (arrays_match_1.arraysMatch(sort.data, otherArr))
-    console.log('test 12 passed');
-else
-    console.log('test 12 FAILED');
-// Test 13
-sort.data = [1, 2, 1, 3, 'hello', 'there', 2, 13, 8, 9, 3];
-otherArr = sort.data;
-obj = sort.allOfEach([1, 2, 3], ['h', 'i', 'j']);
-if (arrays_match_1.arraysMatch(sort.data, ['h', 'i', 'h', 'j', 'hello', 'there', 'i', 13, 8, 9, 'j']) &&
-    (obj.className && obj.className === 'PublicArraySorter' &&
-        arrays_match_1.arraysMatch(sort.data, obj.data)))
-    console.log('test 13 passed');
-else
-    console.log('test 13 FAILED');
-//Test 14
-if (arrays_match_1.arraysMatch(sort.data, otherArr))
-    console.log('test 14 passed');
-else
-    console.log('test 14 FAILED');
-// Test 15
-sort.data = [1, 2, 1, 3, 'hello', 'there', 2, 13, 8, 9, 3];
-otherArr = sort.data;
-obj = sort.each(function (item, index, array) {
-    if (index > 5)
-        return (item * 2);
-    else
-        return item;
-});
-if (arrays_match_1.arraysMatch(sort.data, [1, 2, 1, 3, 'hello', 'there', 4, 26, 16, 18, 6]) &&
-    (obj.className && obj.className === 'PublicArraySorter' &&
-        arrays_match_1.arraysMatch(sort.data, obj.data)))
-    console.log('test 15 passed');
-else
-    console.log('test 15 FAILED');
-//Test 16
-if (arrays_match_1.arraysMatch(sort.data, otherArr))
-    console.log('test 16 passed');
-else
-    console.log('test 16 FAILED');
-// Test 17
-sort.data = [1, 2, 1, 3, 'hello', 'there', 2, 13, 8, 9, 3];
-otherArr = sort.data;
-obj = sort.allWithOne([13, 'hello', 'there'], 0);
-if (arrays_match_1.arraysMatch(sort.data, [1, 2, 1, 3, 0, 0, 2, 0, 8, 9, 3]) &&
-    (obj.className && obj.className === 'PublicArraySorter' &&
-        arrays_match_1.arraysMatch(sort.data, obj.data)))
-    console.log('test 17 passed');
-else
-    console.log('test 17 FAILED');
-//Test 18
-if (arrays_match_1.arraysMatch(sort.data, otherArr))
-    console.log('test 18 passed');
-else
-    console.log('test 18 FAILED');
+    console.log('test 5B FAILED');
