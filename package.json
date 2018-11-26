@@ -24,7 +24,8 @@
   },
   "homepage": "https://github.com/writetome51/public-array-sorter#readme",
   "devDependencies": {
-    "typescript": "^3.0.1"
+    "typescript": "^3.0.1",
+    "@writetome51/arrays-match": "~1.0.3"
   },
   "dependencies": {
     "@writetome51/alphabetize": "latest",
