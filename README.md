@@ -53,10 +53,22 @@ shuffle(): this;
 
 ```
 // getting an instance:
-let sort = new PublicArraySorter(['h','e','l','l','o']);
+let sort = new PublicArraySorter([4,1,6,0,2,9,7]);
+
+// sorting numbers:
+sort.numbersAscending(); // sort.data is now [0,1,2,4,6,7,9]
 
 // changing the array content:
-sort.data = [1,2,3,4,5,6,7];
+sort.data = ['h','e','l','l','o'];
+
+// sorting alphabetically:
+sort.alphabetize(); // sort.data is now ['e', 'h', 'l', 'l', 'o']
+
+// reversing the order:
+sort.reverse(); // sort.data is now ['o', 'l', 'l', 'h', 'e']
+
+// randomizing the order:
+sort.shuffle();
 
 ```
 
