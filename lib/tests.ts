@@ -110,3 +110,4 @@ else console.log('test 5A FAILED');
 //Test 5B: make sure memory reference wasn't broken:
 if (arraysMatch(sort.data, otherArr)) console.log('test 5B passed');
 else console.log('test 5B FAILED');
+//

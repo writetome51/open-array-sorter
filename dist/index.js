@@ -26,21 +26,21 @@ var PublicArraySorter = /** @class */ (function (_super) {
     }
     // All these functions change the order of the array items and return the class instance.
     PublicArraySorter.prototype.alphabetize = function () {
-        return this.returnThis_after(alphabetize_1.alphabetize(this.data));
+        return this._returnThis_after(alphabetize_1.alphabetize(this.data));
     };
     PublicArraySorter.prototype.numbersAscending = function () {
         var orderedNumbers = get_in_ascending_order_1.getInAscendingOrder(this.data);
-        return this.returnThis_after(set_array_1.setArray(this.data, orderedNumbers));
+        return this._returnThis_after(set_array_1.setArray(this.data, orderedNumbers));
     };
     PublicArraySorter.prototype.numbersDescending = function () {
-        return this.returnThis_after(this.numbersAscending().reverse());
+        return this.numbersAscending().reverse();
     };
     PublicArraySorter.prototype.reverse = function () {
-        return this.returnThis_after(this.data.reverse());
+        return this._returnThis_after(this.data.reverse());
     };
     PublicArraySorter.prototype.shuffle = function () {
         var shuffledData = array_get_shuffled_1.getShuffled(this.data);
-        return this.returnThis_after(set_array_1.setArray(this.data, shuffledData));
+        return this._returnThis_after(set_array_1.setArray(this.data, shuffledData));
     };
     return PublicArraySorter;
 }(public_array_container_1.PublicArrayContainer));

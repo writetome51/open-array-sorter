@@ -1,6 +1,6 @@
 {
   "name": "@writetome51/public-array-sorter",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A typescript/javascript class for sorting an array",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -40,7 +40,7 @@
     "@writetome51/alphabetize": "~1.0.3",
     "@writetome51/array-get-shuffled": "~1.0.4",
     "@writetome51/get-in-ascending-order": "~1.0.4",
-    "@writetome51/public-array-container": "~1.0.4",
+    "@writetome51/public-array-container": "~2.0.1",
     "@writetome51/set-array": "~1.0.0"
   }
 }

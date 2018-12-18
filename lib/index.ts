@@ -17,29 +17,29 @@ export class PublicArraySorter extends PublicArrayContainer {
 
 
 	alphabetize(): this {
-		return this.returnThis_after(alphabetize(this.data));
+		return this._returnThis_after(alphabetize(this.data));
 	}
 
 
 	numbersAscending(): this {
 		let orderedNumbers = getInAscendingOrder(this.data);
-		return this.returnThis_after(setArray(this.data, orderedNumbers));
+		return this._returnThis_after(setArray(this.data, orderedNumbers));
 	}
 
 
 	numbersDescending(): this {
-		return this.returnThis_after(this.numbersAscending().reverse());
+		return this.numbersAscending().reverse();
 	}
 
 
 	reverse(): this {
-		return this.returnThis_after(this.data.reverse());
+		return this._returnThis_after(this.data.reverse());
 	}
 
 
 	shuffle(): this {
 		let shuffledData = getShuffled(this.data);
-		return this.returnThis_after(setArray(this.data, shuffledData));
+		return this._returnThis_after(setArray(this.data, shuffledData));
 	}
 
 
