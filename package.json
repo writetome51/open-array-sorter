@@ -1,6 +1,6 @@
 {
   "name": "@writetome51/public-array-sorter",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A typescript/javascript class for sorting an array",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -32,15 +32,14 @@
   },
   "homepage": "https://github.com/writetome51/public-array-sorter#readme",
   "devDependencies": {
-    "typescript": "^3.0.1",
-    "@writetome51/array-has": "~1.0.5",
-    "@writetome51/arrays-match": "~1.0.3"
+    "@writetome51/array-has": "~1.0.7",
+    "@writetome51/arrays-match": "~1.0.5"
   },
   "dependencies": {
-    "@writetome51/alphabetize": "~1.0.3",
-    "@writetome51/array-get-shuffled": "~1.0.4",
-    "@writetome51/get-in-ascending-order": "~1.0.4",
-    "@writetome51/public-array-container": "~2.0.1",
-    "@writetome51/set-array": "~1.0.0"
+    "@writetome51/alphabetize": "~1.0.5",
+    "@writetome51/array-get-shuffled": "~1.0.5",
+    "@writetome51/get-in-ascending-order": "~1.0.6",
+    "@writetome51/public-array-container": "~2.0.2",
+    "@writetome51/set-array": "~1.0.2"
   }
 }

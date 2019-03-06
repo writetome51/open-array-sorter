@@ -3,44 +3,24 @@
 An array-manipulating TypeScript/JavaScript class with methods that change   
 the order of the array items.
 
-## Installation
-
-You must have npm installed first.  Then, in the command line:
-
-```bash
-npm install @writetome51/public-array-sorter
+## Constructor
+```
+constructor(data? = [])  // 'data' becomes the array the class manipulates.
 ```
 
-## Loading
+You can also reset the array by accessing the class `.data` property:
 ```
-// If using TypeScript:
-import {PublicArraySorter} from '@writetome51/public-array-sorter';
-// If using ES5 JavaScript:
-var PublicArraySorter = require('@writetome51/public-array-sorter').PublicArraySorter;
+this.data = [1,2,3,4];
 ```
 
-To instantiate, pass the actual array it will contain to its constructor:
-
-	let sort = new PublicArraySorter([item1, item2, item3, ...]);
-	
-	// Or, instantiate with an empty array:
-	let sort = new PublicArraySorter();
-
-You can reset the array by accessing the class `.data` property:
-
-    sort.data = [1,2,3,4,...];  
-
-
-### Properties
-
+## Properties
 ```
-data : any[] (read-writable) // This is the array to be operated on.
+data : any[]  // the actual array
 
 className : string (read-only)
 ```
 
-### Methods
-
+## Methods
 ```
 alphabetize(): this;
     // No item in this.data gets modified, but each is treated as a string 
@@ -56,8 +36,10 @@ reverse(): this;
 
 shuffle(): this;
     // randomizes the order of items.
-
-
+```
+The methods below are not important to know about in order to use this  
+class.  They're inherited from [BaseClass](https://github.com/writetome51/typescript-base-class#baseclass) .
+```
 protected   _createGetterAndOrSetterForEach(
 		propertyNames: string[],
 		configuration: IGetterSetterConfiguration
@@ -97,8 +79,7 @@ protected   _runMethod_and_returnThis(
 ) : this
 ```
 
-## Usage
-
+## Usage Examples
 ```
 // getting an instance:
 let sort = new PublicArraySorter([4,1,6,0,2,9,7]);
@@ -117,13 +98,27 @@ sort.reverse(); // sort.data is now ['o', 'l', 'l', 'h', 'e']
 
 // randomizing the order:
 sort.shuffle();
-
 ```
 
 ## Inheritance Chain
 
 PublicArraySorter<--[PublicArrayContainer](https://github.com/writetome51/public-array-container#publicarraycontainer)<--[BaseClass](https://github.com/writetome51/typescript-base-class#baseclass)
 
+## Installation
+
+You must have npm installed first.  Then, in the command line:
+
+```bash
+npm install @writetome51/public-array-sorter
+```
+
+## Loading
+```
+// If using TypeScript:
+import {PublicArraySorter} from '@writetome51/public-array-sorter';
+// If using ES5 JavaScript:
+var PublicArraySorter = require('@writetome51/public-array-sorter').PublicArraySorter;
+```
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
