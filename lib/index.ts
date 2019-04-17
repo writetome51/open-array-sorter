@@ -1,6 +1,6 @@
 import { PublicArrayContainer } from '@writetome51/public-array-container';
 import { getShuffled } from '@writetome51/array-get-shuffled';
-import { getInAscendingOrder } from '@writetome51/get-in-ascending-order';
+import { getInNumericOrder } from '@writetome51/get-in-numeric-order';
 import { alphabetize } from '@writetome51/alphabetize';
 import { setArray } from '@writetome51/set-array';
 
@@ -22,7 +22,7 @@ export class PublicArraySorter extends PublicArrayContainer {
 
 
 	numbersAscending(): this {
-		let orderedNumbers = getInAscendingOrder(this.data);
+		let orderedNumbers = getInNumericOrder(this.data);
 		return this._returnThis_after(setArray(this.data, orderedNumbers));
 	}
 

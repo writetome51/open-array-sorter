@@ -15,7 +15,7 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var public_array_container_1 = require("@writetome51/public-array-container");
 var array_get_shuffled_1 = require("@writetome51/array-get-shuffled");
-var get_in_ascending_order_1 = require("@writetome51/get-in-ascending-order");
+var get_in_numeric_order_1 = require("@writetome51/get-in-numeric-order");
 var alphabetize_1 = require("@writetome51/alphabetize");
 var set_array_1 = require("@writetome51/set-array");
 var PublicArraySorter = /** @class */ (function (_super) {
@@ -29,7 +29,7 @@ var PublicArraySorter = /** @class */ (function (_super) {
         return this._returnThis_after(alphabetize_1.alphabetize(this.data));
     };
     PublicArraySorter.prototype.numbersAscending = function () {
-        var orderedNumbers = get_in_ascending_order_1.getInAscendingOrder(this.data);
+        var orderedNumbers = get_in_numeric_order_1.getInNumericOrder(this.data);
         return this._returnThis_after(set_array_1.setArray(this.data, orderedNumbers));
     };
     PublicArraySorter.prototype.numbersDescending = function () {
