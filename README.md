@@ -4,24 +4,27 @@ An array-manipulating TypeScript/JavaScript class with methods that change
 the order of the array items.
 
 ## Constructor
-```
-constructor(data? = [])  // 'data' becomes the array the class manipulates.
+```ts
+constructor(data? = [])  // 'data' is assigned to this.data .
 ```
 
-You can also reset the array by accessing the class `.data` property:
-```
+You can reset the array by accessing the class `.data` property:
+```ts
 this.data = [1,2,3,4];
 ```
 
 ## Properties
-```
+```ts
 data : any[]  // the actual array
 
 className : string (read-only)
 ```
 
 ## Methods
-```
+<details>
+<summary>view methods</summary>
+
+```ts
 alphabetize(): this;
     // No item in this.data gets modified, but each is treated as a string 
     // during the sorting.
@@ -39,7 +42,7 @@ shuffle(): this;
 ```
 The methods below are not important to know about in order to use this  
 class.  They're inherited from [BaseClass](https://github.com/writetome51/typescript-base-class#baseclass) .
-```
+```ts
 protected   _createGetterAndOrSetterForEach(
 		propertyNames: string[],
 		configuration: IGetterSetterConfiguration
@@ -71,16 +74,20 @@ protected   _returnThis_after(voidExpression: any) : this
     // voidExpression is executed, then function returns this.
     // Even if voidExpression returns something, the returned data isn't used.
 
-protected   _runMethod_and_returnThis(
-    callingObject, 
-    method: Function, 
-    methodArgs: any[], 
-    additionalAction?: Function // takes the result returned by method as an argument.
-) : this
+protected   _errorIfPropertyHasNoValue(
+                property: string, // can contain dot-notation, i.e., 'property.subproperty'
+                propertyNameInError? = ''
+            ) : void
+    // If value of this[property] is undefined or null, it triggers fatal error:
+    // `The property "${propertyNameInError}" has no value.`
 ```
+</details>
 
 ## Usage Examples
-```
+<details>
+<summary>view examples</summary>
+
+```ts
 // getting an instance:
 let sort = new PublicArraySorter([4,1,6,0,2,9,7]);
 
@@ -99,6 +106,7 @@ sort.reverse(); // sort.data is now ['o', 'l', 'l', 'h', 'e']
 // randomizing the order:
 sort.shuffle();
 ```
+</details>
 
 ## Inheritance Chain
 
@@ -106,14 +114,12 @@ PublicArraySorter<--[PublicArrayContainer](https://github.com/writetome51/public
 
 ## Installation
 
-You must have npm installed first.  Then, in the command line:
-
 ```bash
 npm install @writetome51/public-array-sorter
 ```
 
 ## Loading
-```
+```ts
 // If using TypeScript:
 import {PublicArraySorter} from '@writetome51/public-array-sorter';
 // If using ES5 JavaScript:

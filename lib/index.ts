@@ -8,11 +8,6 @@ import { setArray } from '@writetome51/set-array';
 export class PublicArraySorter extends PublicArrayContainer {
 
 
-	constructor(data = []) {
-		super(data);
-	}
-
-
 	// All these functions change the order of the array items and return the class instance.
 
 
