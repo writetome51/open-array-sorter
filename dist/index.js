@@ -20,9 +20,8 @@ var alphabetize_1 = require("@writetome51/alphabetize");
 var set_array_1 = require("@writetome51/set-array");
 var PublicArraySorter = /** @class */ (function (_super) {
     __extends(PublicArraySorter, _super);
-    function PublicArraySorter(data) {
-        if (data === void 0) { data = []; }
-        return _super.call(this, data) || this;
+    function PublicArraySorter() {
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     // All these functions change the order of the array items and return the class instance.
     PublicArraySorter.prototype.alphabetize = function () {
